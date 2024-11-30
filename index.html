@@ -1132,17 +1132,6 @@ document.addEventListener('DOMContentLoaded', function() {
           pairStudentsButton.disabled = false;
       }
   }
-
-  let isSelectionInProgress = false;
-  let selectionTimeout;
-
-  function selectRandomStudent() {
-      // თუ შერჩევა მიმდინარეობს
-      if (isSelectionInProgress) {
-          alert('7 წამი დაიცადეთ');
-          return;
-      }
-
       if (availableStudents.length === 0) {
           availableStudents = [...students];
       }
@@ -1170,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const selectButton = document.querySelector('#selectRandomStudentButton'); // დაამატეთ ID ღილაკს HTML-ში
           selectButton.disabled = true;
       }, 7000);
-  }
+  
 
   function distributeGroups(groupSize) {
       if (groupSize >= students.length) {
